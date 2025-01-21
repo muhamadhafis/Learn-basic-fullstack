@@ -1,0 +1,33 @@
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: #11c5c6;
+}
+
+.box p {
+  height: 75%;
+  width: 75%;
+  background-color: #fbdd1c;
+}
+
+.boxOverflow {
+  width: 200px;
+  height: 100px;
+  overflow: auto;
+}
+
+div {
+  height: 200px;
+  width: 200px;
+  background-color: lightgreen;
+  border: 10px solid cornflowerblue;
+  padding: 10px;
+}
+
+.content {
+  box-sizing: content-box;
+}
+
+.box {
+  box-sizing: border-box;
+}
