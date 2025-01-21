@@ -30,6 +30,9 @@ footer {
 nav {
   background-color: #00a2c6;
   padding: 5px;
+
+  position: sticky;
+  top: 0;
 }
 nav li {
   display: inline;
@@ -88,4 +91,16 @@ nav a:hover {
 aside {
   float: right;
   width: 25%;
+}
+
+header {
+  display: inline;
+}
+
+@media screen and (max-width: 1000px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
 }
