@@ -18,7 +18,7 @@
         <img src="./assets/img/calm-logo.png" alt="" />
       </div>
 
-      <nav>
+      <nav id="main-nav">
         <ul>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#playlist">Calm Playlist</a></li>
@@ -43,5 +43,23 @@
         <img src="./assets/img/calm-hero.png" alt="" />
       </section>
     </main>
+
+    <script>
+      const drawerButton = document.querySelector("#drawer-button");
+      const drawerNavigation = document.querySelector("#main-nav");
+
+      drawerButton.addEventListener("click", () => {
+        drawerNavigation.classList.toggle("open");
+      });
+
+      document.body.addEventListener("click", (event) => {
+        if (
+          !drawerNavigation.contains(event.target) &&
+          !drawerButton.contains(event.target)
+        ) {
+          drawerNavigation.classList.remove("open");
+        }
+      });
+    </script>
   </body>
 </html>
