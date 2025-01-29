@@ -1,7 +1,10 @@
-import { makeCoffe } from "./making-coffe.js";
+import { makeCoffee, sendCoffee } from "./making-coffe.js";
 
-console.log("please wait for your order.");
+console.log("I'm order a cup coffee");
 
-makeCoffe();
-
-console.log("our waiter hased come to deliver your order");
+makeCoffee(() => {
+  sendCoffee(() => {
+    console.log("Waiter giving the coffee");
+    console.log("I drink that coffee");
+  });
+});

@@ -1,26 +1,24 @@
-export function makeCoffe() {
-  const timeMakeCoffe = 5000;
-  const inSec = 5000 / 1000;
+export function makeCoffee(callback) {
+  const estimationTime = 5000;
 
-  console.log(`Our waiter will deliver your coffe in ${inSec} second`);
-
-  setTimeout(() => {
-    console.log(".");
-  }, 1000);
+  const inSec = estimationTime / 1000;
+  console.log(`Please wait, our barista making coffee in ${inSec} second`);
 
   setTimeout(() => {
-    console.log("..");
-  }, 2000);
+    console.log("Our barista finished make coffee");
+
+    callback();
+  }, estimationTime);
+}
+
+export function sendCoffee(callback) {
+  const estimationTime = 3000;
+
+  console.log("Waiter driving coffee into your table");
 
   setTimeout(() => {
-    console.log("...");
-  }, 3000);
+    console.log("The waiter has reached the table!");
 
-  setTimeout(() => {
-    console.log("...");
-  }, 4000);
-
-  setTimeout(() => {
-    console.log("Your Coffe is ready right now");
-  }, timeMakeCoffe);
+    callback();
+  }, estimationTime);
 }
