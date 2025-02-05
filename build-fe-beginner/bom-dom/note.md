@@ -3,7 +3,7 @@
 ### Perbedaan BOM dengan DOM
 
 **BOM** digunakan untuk kita memerintahkan sebuah browser untuk melakukan sesuatu
-Sementara, **DOM** digunakan untuk memerintah document page browser
+Sementara, **DOM** digunakan untuk memanipulasi konten pada document dengan API
 
 **Contoh BOM :**
 `window.alert("pop up bro!")`
@@ -15,5 +15,9 @@ Sementara, **DOM** digunakan untuk memerintah document page browser
 ### Browser Enveronment
 
 JS secara default berapa pada **Browser Enveronment** (BE), semua program berjalan di atas browser oleh karna itu ada BOM dan DOM
-
 Kalau kita mencoba program pada BOM atau DOM pada sanbox JS biasanya error karna menggunakan **NodeJS Enveronmnet**
+
+### DOM Tree
+
+DOM Tree yang dimaksud adalah pada stuktur HTML terdapat cabangnya lagi.
+Seperti <html> -> <body> -> <main> -> <h1> -> "halo sir, ini adalah judul"
