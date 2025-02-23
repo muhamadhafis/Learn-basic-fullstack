@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const completeBookList = document.getElementById("completeBookList");
 
   let books = JSON.parse(localStorage.getItem("books")) || [];
+  books = books.map((book) => ({
+    ...book,
+    year: Number(book.year),
+  }));
 
   function saveBooks() {
     localStorage.setItem("books", JSON.stringify(books));
@@ -27,17 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const div = document.createElement("div");
     div.className = "book-item col-md-6";
     div.dataset.bookid = book.id;
-
+    div.setAttribute("data-testid", "bookItem");
     div.innerHTML = `
-      <h3 class="headerNew">Judul: ${book.title}</h3>
-      <p class="authorNew">Penulis: ${book.author}</p>
-      <p class="yearNew">Tahun: ${book.year}</p>
+      <h3 data-testid="bookItemTitle">${book.title}</h3>
+      <p data-testid="bookItemAuthor">Penulis: ${book.author}</p>
+      <p data-testid="bookItemYear">Tahun: ${book.year}</p>
       <div>
-        <button class="btn btn-success btn-sm me-2 toggle-complete">${
+        <button data-testid="bookItemIsCompleteButton" class="btn btn-success btn-sm me-2 toggle-complete">${
           book.isComplete ? "Pindah ke Belum Selesai" : "Selesai Dibaca"
         }</button>
-        <button class="btn btn-danger btn-sm me-2 delete-book">Hapus</button>
-        <button class="btn btn-warning btn-sm edit-book">Edit</button>
+        <button data-testid="bookItemDeleteButton" class="btn btn-danger btn-sm me-2 delete-book">Hapus</button>
+        <button data-testid="bookItemEditButton" class="btn btn-warning btn-sm edit-book">Edit</button>
       </div>
     `;
 
@@ -60,12 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return div;
   }
 
+  // Event listener untuk form tambah buku
   bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const title = document.getElementById("bookFormTitle").value;
     const author = document.getElementById("bookFormAuthor").value;
-    const year = document.getElementById("bookFormYear").value;
+    const year = parseInt(document.getElementById("bookFormYear").value, 10);
     const isComplete = document.getElementById("bookFormIsComplete").checked;
 
     const newBook = {
@@ -82,10 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
     bookForm.reset();
   });
 
+  // Fungsi untuk mengedit buku
   function editBook(book) {
     const title = prompt("Edit Judul:", book.title);
     const author = prompt("Edit Penulis:", book.author);
-    const year = prompt("Edit Tahun:", book.year);
+    const year = parseInt(prompt("Edit Tahun:", book.year), 10);
 
     if (title && author && year) {
       book.title = title;

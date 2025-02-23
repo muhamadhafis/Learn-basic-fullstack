@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kondisional formulir</title>
+  </head>
+  <body>
+    <main>
+      <form action="">
+        <div>
+          <input
+            type="checkbox"
+            name="isMarried"
+            id="isMarried"
+            data-controls="additionalForm"
+          />
+          <label for="isMarried">Sudah berkeluarga?</label>
+        </div>
+
+        <fieldset id="additionalForm">
+          <legend>Data Keluarga</legend>
+          <div>
+            <label for="wifeName">Nama istri anda :</label> <br />
+            <input type="text" name="wifeName" id="wifeName" />
+          </div>
+          <div>
+            <label for="childCount">Berapa orang anak :</label> <br />
+            <input type="number" name="childCount" id="childCount" />
+          </div>
+        </fieldset>
+
+        <div>
+          <button type="submit">Kirim</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="kondisional_form.js"></script>
+  </body>
+</html>

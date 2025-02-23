@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form field</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <label for="">ad</label>
+        <legend for="">db</legend>
+        <input type="date" required /> <br />
+        <input type="time" required /> <br />
+        <input type="datetime-local" required /> <br />
+        <button type="submit">Kirim</button>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Jenis kelamin</legend>
+      <form>
+        <div>
+          <input type="radio" name="man" id="gender_man">
+          <label for="gender_man">Laki-laki</label>
+        </div>
+
+        <div>
+          <input type="radio" name="woman" id="gender_woman">
+          <label for="gender_woman">Perempuan</label>
+        </div>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Hobi</legend>
+      <form>
+        <div>
+          <input type="checkbox">
+          <label>Makan</label>
+        </div>
+        <div>
+          <input type="checkbox">
+          <label>Baca buku</label>
+        </div>
+        <div>
+          <input type="checkbox">
+          <label>Olahraga</label>
+        </div>
+        <div>
+          <input type="checkbox" id="hobiTravel">
+          <label for="hobiTravel">Travel</label>
+        </div>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Makanan favorit</legend>
+      <form>
+        <select name="favotitFood" id="favotitFood">
+          <option value="" disabled="disabled">Pilih salah satu</option>
+          <option value="">Rendang</option>
+          <option value="">Nasi kuning</option>
+          <option value="">Soto ayam</option>
+        </select>
+        <button type="submit">Kirim</button>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Datalist, prediksi</legend>
+      <form>
+        <label for="tokoOnline">Toko online</label>
+        <input type="text" id="tokoOnline" list="listTokoOnline">
+        <datalist id="listTokoOnline">
+          <option value="Shopee">Shopee</option>
+          <option value="Tokopedia">Tokopedia</option>
+        </datalist>
+      </form>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Website anda</legend>
+      <form>
+        <label for="websiteUser">Portofolio</label>
+        <input type="url" name="websiteUser" id="websiteUser" required>
+        <button type="submit">Kirim</button>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Data diri</legend>
+      <form>
+        <div>
+          <label for="name">Nama</label>
+          <input type="text" id="name" enterkeyhint="enter" required>
+          <input type="email" id="email" inputmode="email" required>
+          <input type="text" id="number" inputmode="numeric" required>
+          <input type="text" id="code" minlength="5" max="5" required>
+        </div>
+        <div>
+          <button type="submit">Kirim</button>
+        </div>
+      </form>
+    </fieldset>
+  </body>
+</html>

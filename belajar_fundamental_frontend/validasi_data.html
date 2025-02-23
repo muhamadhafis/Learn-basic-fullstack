@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validasi data</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="username">username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="robinexample"
+          aria-describedby="usernameValidation"
+          pattern="^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
+          minlength="6"
+          required
+        />
+        <p
+          id="usernameValidation"
+          class="validation-message"
+          aria-live="polite"
+        ></p>
+      </div>
+      <div>
+        <button type="submit" formnovalidate>Kirim</button>
+      </div>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      const usernameInput = form.elements.username;
+
+      form.addEventListener("submit", (event) => event.preventDefault());
+
+      const customValiationUserHandler = (event) => {
+        event.target.setCustomValidity("");
+
+        if (event.target.validity.valueMissing) {
+          event.target.setCustomValidity("Wajib isi");
+          return;
+        }
+        if (event.target.validity.tooShort) {
+          event.target.setCustomValidity("terlalu pendek, minim 6");
+          return;
+        }
+        if (event.target.validity.patternMismatch) {
+          event.target.setCustomValidity("tidak boleh ada simbol");
+          return;
+        }
+      };
+
+      usernameInput.addEventListener("change", customValiationUserHandler);
+      usernameInput.addEventListener("invalid", customValiationUserHandler);
+
+      usernameInput.addEventListener("blur", (event) => {
+        const isValid = event.target.validity.valid;
+        const errorMessage = event.target.validationMessage;
+
+        const connectValidationId =
+          event.target.getAttribute("aria-describedby");
+        const connectValidationEl = connectValidationId
+          ? document.getElementById(connectValidationId)
+          : null;
+
+        if (connectValidationEl && errorMessage && !isValid) {
+          connectValidationEl.innerText = errorMessage;
+        } else {
+          connectValidationEl = "";
+        }
+      });
+    </script>
+  </body>
+</html>
