@@ -1,0 +1,63 @@
+*,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: skyblue;
+  padding: 1.5rem;
+  color: white;
+}
+
+section {
+  width: 90%;
+  height: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 16px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+  margin: 1rem 0;
+}
+
+.formInput {
+  height: 3rem;
+  width: 20rem;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid skyblue;
+  padding-left: 10px;
+}
+
+button {
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 2px solid skyblue;
+  background-color: skyblue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.headerBookFormIsComplete {
+  font-size: 20px;
+}
+
+input[type="checkbox"] {
+  margin: 0 5px;
+  transform: scale(1.5);
+  margin-top: 1rem;
+}
+
+.headerNew {
+  margin-bottom: 10px;
+}
+
+.authorNew {
+  margin-bottom: 10px;
+}
