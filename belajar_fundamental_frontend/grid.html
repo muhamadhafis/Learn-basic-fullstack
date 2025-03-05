@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .container {
+        display: grid;
+        width: 500px;
+
+        grid-template-columns: 5rem 100px 7em 10%;
+      }
+
+      [class^="box"] {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div style="background-color: lightcoral" class="box1"></div>
+      <div style="background-color: lightseagreen" class="box2"></div>
+      <div style="background-color: lightgoldenrodyellow" class="box3"></div>
+      <div style="background-color: lightgreen" class="box4"></div>
+    </div>
+  </body>
+</html>
