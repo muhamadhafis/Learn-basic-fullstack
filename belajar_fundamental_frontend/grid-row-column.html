@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position Manage Item Position</title>
+    <style>
+      .container {
+        max-width: 80%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 10px;
+      }
+
+      .box {
+        background-color: lightgray;
+      }
+
+      .span-row {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background-color: red;
+      }
+
+      .span-col {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container" id="container">
+        <div class="box span-row">Kotak satu</div>
+        <div class="box">Kotak dua</div>
+        <div class="box span-col">Kotak tiga</div>
+        <div class="box">Kotak empat</div>
+        <div class="box">Kotak lima</div>
+      </div>
+    </main>
+  </body>
+</html>

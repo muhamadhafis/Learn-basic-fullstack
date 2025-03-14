@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kendali penuh grid template</title>
+    <style>
+      body,
+      .grid {
+        min-height: 95vh;
+      }
+
+      .grid {
+        font-family: sans-serif;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 5fr 1fr;
+        grid-template-areas: /*Memberi susunan grid dari elemt/div*/
+          "header header header header"
+          "main main main aside"
+          "footer footer footer footer";
+      }
+
+      .grid > * p {
+        text-align: center;
+      }
+
+      header {
+        grid-area: header;
+        background-color: lightsalmon;
+      }
+      main {
+        grid-area: main;
+        background-color: skyblue;
+      }
+      aside {
+        grid-area: aside;
+        background-color: yellowgreen;
+      }
+      footer {
+        grid-area: footer;
+        background-color: lightgreen;
+      }
+
+      @media (max-width: 400px) {
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 5fe 2fr 1fr;
+          grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <header>
+        <p>Header content</p>
+      </header>
+      <main>
+        <p>Main content</p>
+      </main>
+      <aside>
+        <p>Aside content</p>
+      </aside>
+      <footer>
+        <p>Footer content</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alignment Justify Items</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 400px;
+        height: 200px;
+        background-color: wheat;
+
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: auto;
+      }
+
+      .container {
+        /*   justify-content: start; */ /*posisi container dari just-item HORIZONTAL*/
+        /*   justify-content: end; */
+        /*   justify-content: center; */
+        /*   justify-content: space-around; */
+        /*   justify-content: space-evenly; */
+        justify-content: space-between;
+        /* justify-content: stretch; */
+
+        /* justify-items: start; posisi konten HORIZONTAL */
+        /* justify-items: end; */
+        justify-items: center;
+        /*   justify-items: stretch; */
+
+        /* align-items: start; */ /*posisi konten VERTIKAL*/
+        /*   align-items: end; */
+        align-items: center;
+        /* align-items: stretch; */
+      }
+
+      .box {
+        background-color: rgb(235, 208, 159);
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      /* spesifik */
+      .box1 {
+        align-self: end;
+        justify-self: end;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container justify-items justify-content .align-items">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+      </div>
+    </main>
+  </body>
+</html>
